@@ -70,6 +70,7 @@ namespace Assignment2
 
                 myDS = dao.getMonHocByMSSV(int.Parse(comboBoxMssv.Text));
                 dataGrid.DataSource = myDS.Tables[0];
+                dataGrid.Columns["TENMH"].Width = 200;
                 if (dataGrid.Columns.Count < 5) {
                     DataGridViewTextBoxColumn newColumn = new DataGridViewTextBoxColumn() { Name = "DIEM TB" };
                     dataGrid.Columns.Add(newColumn);
