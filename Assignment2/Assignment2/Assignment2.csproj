@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Util\DBHelper.cs" />
+    <Compile Include="dao\SinhVienDAO.cs" />
+    <Compile Include="dto\SinhVienDTO.cs" />
+    <Compile Include="util\DBHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
