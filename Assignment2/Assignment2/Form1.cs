@@ -21,28 +21,17 @@ namespace Assignment2
         public Form1()
         {
             InitializeComponent();
-            
-            //load data from database to the data set
-            initDataSet();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             loadDataInComboBox();
         }
-        public void initDataSet()
-        {
-            //Fill the DataSet with a new DataTable
-            dAdapt = new SqlDataAdapter("select * from SVien", cnStr);
-            //using SqlCommandBuilder to generate SQL query commands
-            SqlCommandBuilder invBuilder = new SqlCommandBuilder(dAdapt);
-        }
         public void loadDataInComboBox()
         {
             try
             {
-                //dAdapt.Fill(myDS, "SVien");
-                //dataGrid.DataSource = myDS.Tables["SVien"];
                 SinhVienDAO dao = new SinhVienDAO();
                 myDS = dao.getAllMSSV();
                 comboBoxMssv.DisplayMember = "MASV";
@@ -93,7 +82,7 @@ namespace Assignment2
                     }
                 }
 
-                txtDiemTB.Text = (totalAve / divAve) + "";
+                txtDiemTB.Text = String.Format("{0:0.00}", (totalAve / divAve));
             }
             catch (Exception ex)
             {
